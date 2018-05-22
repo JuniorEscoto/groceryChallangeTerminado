@@ -10,7 +10,7 @@ import Foundation
 
 struct Answer: Codable {
     let url: URL
-    let isCorrect: Bool
+    let correct: Bool
 }
 
 struct Question: Codable {

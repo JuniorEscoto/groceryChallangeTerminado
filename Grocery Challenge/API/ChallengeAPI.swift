@@ -14,7 +14,7 @@ protocol API {
 }
 
 enum Requests: String {
-    case questions = "https://gist.github.com/acrookston/e1af7bf2e2607db3d27a0b44ed1843c1/raw/3ea6d02f9f58a0eec9e52ecb743acdd3d865daec/question.json"
+    case questions = "https://gist.github.com/acrookston/e1af7bf2e2607db3d27a0b44ed1843c1/raw/490d746e54e774476652cf8ab65f9c912e54e95f/question.json"
 
     var url: URL {
         return URL(string: self.rawValue)!
