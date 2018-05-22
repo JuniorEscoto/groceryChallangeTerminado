@@ -9,7 +9,7 @@
 import Foundation
 
 protocol API {
-    func image(from url: URL, _ completion: @escaping (Result<URL>) -> Void)
+    func image(from url: URL, _ completion: @escaping (Result<Data>) -> Void)
     func get(request: Requests, completion: @escaping (Result<Data>) -> Void)
 }
 
@@ -38,17 +38,17 @@ class ChallengeAPI: API {
         }.resume()
     }
 
-    func image(from url: URL, _ completion: @escaping (Result<URL>) -> Void) {
-        URLSession.shared.downloadTask(with: url) { (url, response, error) in
+    func image(from url: URL, _ completion: @escaping (Result<Data>) -> Void) {
+        URLSession.shared.dataTask(with: url) { (data, response, error) in
             if let error = error {
                 completion(.error(error))
                 return
             }
-            guard let url = url else {
+            guard let data = data else {
                 completion(.error(APIError.invalidData))
                 return
             }
-            completion(.success(url))
+            completion(.success(data))
         }.resume()
     }
 }

@@ -17,29 +17,21 @@ extension UIImage {
     static func asyncFrom(url: URL, api: API = ChallengeAPI(), _ completion: @escaping (Result<UIImage>) -> Void) {
         api.image(from: url) { result in
             switch result {
-            case .success(let url):
-                asyncFromCache(location: url, completion)
+            case .success(let data):
+                asyncFrom(data: data, completion)
             case .error(let error):
                 completion(.error(error))
             }
         }
     }
 
-    /// Loads an UIImage from local cache `location` asynchronously
-    private static func asyncFromCache(location url: URL, _ completion: @escaping (Result<UIImage>) -> Void) {
+    private static func asyncFrom(data: Data, _ completion: @escaping (Result<UIImage>) -> Void) {
         DispatchQueue.global(qos: .default).async {
-            do {
-                let data = try Data(contentsOf: url)
-                if let image = UIImage(data: data) {
-                    DispatchQueue.main.async {
-                        completion(.success(image))
-                    }
-                } else {
-                    DispatchQueue.main.async {
-                        completion(.error(UIImageError.invalidData))
-                    }
+            if let image = UIImage(data: data) {
+                DispatchQueue.main.async {
+                    completion(.success(image))
                 }
-            } catch {
+            } else {
                 DispatchQueue.main.async {
                     completion(.error(UIImageError.invalidData))
                 }
