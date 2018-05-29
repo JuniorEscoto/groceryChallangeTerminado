@@ -12,10 +12,14 @@ enum UIImageError: Error {
     case invalidData
 }
 
+struct ImageRequest: Requests {
+    let url: URL
+}
+
 extension UIImage {
     /// Loads an UIImage from internet asynchronously
-    static func asyncFrom(url: URL, api: API = ChallengeAPI(), _ completion: @escaping (Result<UIImage>) -> Void) {
-        api.image(from: url) { result in
+    static func asyncFrom(url: URL, service: Service = NetworkService(), _ completion: @escaping (Result<UIImage>) -> Void) {
+        service.get(request: ImageRequest(url: url)) { result in
             switch result {
             case .success(let data):
                 asyncFrom(data: data, completion)
