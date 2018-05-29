@@ -15,8 +15,8 @@ final class ChallengeAPI {
         self.service = service
     }
 
-    func randomQuestion(request: Requests = APIRequests.questions, _ completion: @escaping (Result<Question>) -> Void) {
-        allQuestions(request: request) { result in
+    func randomQuestionAsync(request: Requests = APIRequests.questions, _ completion: @escaping (Result<Question>) -> Void) {
+        allQuestionsAsync(request: request) { result in
             switch result {
             case .success(let questions):
                 guard questions.count > 0 else {
@@ -31,7 +31,7 @@ final class ChallengeAPI {
         }
     }
 
-    func allQuestions(request: Requests = APIRequests.questions, _ completion: @escaping (Result<[Question]>) -> Void) {
+    func allQuestionsAsync(request: Requests = APIRequests.questions, _ completion: @escaping (Result<[Question]>) -> Void) {
         service.get(request: request) { result in
             switch result {
             case .success(let data):
