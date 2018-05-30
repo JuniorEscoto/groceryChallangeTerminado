@@ -8,12 +8,12 @@
 
 import Foundation
 
-struct Answer: Codable {
-    let url: URL
-    let correct: Bool
+struct Question: Codable {
+    let query: String // The prompt/title/question we want to ask
+    let answers: [Answer] // List of answers (always 4)
 }
 
-struct Question: Codable {
-    let query: String
-    let answers: [Answer]
+struct Answer: Codable {
+    let url: URL // A URL pointing to a remote image
+    let correct: Bool // Is this the correct answer or not
 }
