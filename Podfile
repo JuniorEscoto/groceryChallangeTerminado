@@ -8,12 +8,12 @@ target 'Grocery Challenge' do
   # pod "AnchorKit"
   # pod "Cartography"
   # pod "SnapKit"
-
   # pod "Alamofire"
-  # pod "SDWebImage"
   # pod "Kingfisher"
-
   # pod "BrightFutures"
   # pod "Result"
   # pod "RxSwift"
+
+  pod "SDWebImage", '~>4.3.0'
+  
 end

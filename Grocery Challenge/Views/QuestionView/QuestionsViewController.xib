@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="ipad9_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="QuestionsViewController" customModule="Grocery_Challenge" customModuleProvider="target">
+            <connections>
+                <outlet property="activityIndicator" destination="7uy-Xl-jv7" id="az4-1M-ORc"/>
+                <outlet property="bannerContainerView" destination="Zaj-z0-9yw" id="5qo-0c-ean"/>
+                <outlet property="bannerContainerYOffset" destination="bri-RF-j9R" id="CQy-Ml-gog"/>
+                <outlet property="collectionView" destination="4td-ua-oHE" id="g3A-6z-LX9"/>
+                <outlet property="questionLabel" destination="POf-Or-Z0G" id="qhX-iZ-dAa"/>
+                <outlet property="submitButton" destination="Dor-Gb-nkd" id="fiq-ib-9ne"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bro-jY-n95">
+                    <rect key="frame" x="16" y="36" width="20" height="20"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="20" id="TJe-30-49L"/>
+                        <constraint firstAttribute="height" constant="20" id="Yci-mV-8z6"/>
+                    </constraints>
+                    <state key="normal" image="xCloseIcon"/>
+                    <connections>
+                        <action selector="closeButtonTapped:" destination="-1" eventType="touchUpInside" id="H4P-2s-Ghu"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="POf-Or-Z0G">
+                    <rect key="frame" x="8" y="65" width="752" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="wFD-gr-wpf"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dor-Gb-nkd" customClass="PrimaryButton" customModule="Grocery_Challenge" customModuleProvider="target">
+                    <rect key="frame" x="234" y="964" width="300" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="0nH-8D-7IW"/>
+                        <constraint firstAttribute="width" constant="300" id="gcJ-IZ-gI4"/>
+                    </constraints>
+                    <state key="normal" title="Submit"/>
+                    <connections>
+                        <action selector="submitButtonTapped:" destination="-1" eventType="touchUpInside" id="Csc-VZ-CkR"/>
+                    </connections>
+                </button>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="4td-ua-oHE">
+                    <rect key="frame" x="0.0" y="113" width="768" height="819"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="nrB-VD-ME8">
+                        <size key="itemSize" width="50" height="50"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="pIR-ai-MAl"/>
+                        <outlet property="delegate" destination="-1" id="0dP-g0-sVW"/>
+                    </connections>
+                </collectionView>
+                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="7uy-Xl-jv7">
+                    <rect key="frame" x="374" y="512" width="20" height="20"/>
+                </activityIndicatorView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zaj-z0-9yw">
+                    <rect key="frame" x="0.0" y="0.0" width="768" height="75"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="75" id="jxi-Uu-arb"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="4td-ua-oHE" firstAttribute="top" secondItem="POf-Or-Z0G" secondAttribute="bottom" constant="8" id="1r3-1k-STe"/>
+                <constraint firstItem="Zaj-z0-9yw" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="4ka-3T-vTO"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="Dor-Gb-nkd" secondAttribute="bottom" constant="20" id="8zH-Mc-CP3"/>
+                <constraint firstItem="Bro-jY-n95" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="ELA-be-8MD"/>
+                <constraint firstItem="4td-ua-oHE" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.6" id="EX7-ay-QJf"/>
+                <constraint firstItem="4td-ua-oHE" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.8" id="GJC-Z7-eb1"/>
+                <constraint firstItem="7uy-Xl-jv7" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="HeY-jE-pb3"/>
+                <constraint firstItem="Dor-Gb-nkd" firstAttribute="top" relation="greaterThanOrEqual" secondItem="4td-ua-oHE" secondAttribute="bottom" constant="8" id="KWw-Ym-DfT"/>
+                <constraint firstItem="Zaj-z0-9yw" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="OgQ-O9-DW9"/>
+                <constraint firstItem="7uy-Xl-jv7" firstAttribute="centerY" secondItem="fnl-2z-Ty3" secondAttribute="centerY" id="R84-oC-8ZJ"/>
+                <constraint firstItem="Dor-Gb-nkd" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="Rgz-IV-Nqs"/>
+                <constraint firstItem="4td-ua-oHE" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerXWithinMargins" id="UEL-D4-7bz"/>
+                <constraint firstItem="Dor-Gb-nkd" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="8" id="Xyy-RI-M9k"/>
+                <constraint firstItem="Bro-jY-n95" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="16" id="Zdi-8q-Ue3"/>
+                <constraint firstItem="4td-ua-oHE" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerYWithinMargins" id="bHl-Zr-OvN"/>
+                <constraint firstItem="Zaj-z0-9yw" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="bri-RF-j9R"/>
+                <constraint firstItem="POf-Or-Z0G" firstAttribute="top" secondItem="Zaj-z0-9yw" secondAttribute="bottom" priority="250" constant="15" placeholder="YES" id="gDA-ZR-EFY"/>
+                <constraint firstItem="4td-ua-oHE" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" id="jmx-98-ViN"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="POf-Or-Z0G" secondAttribute="trailing" constant="8" id="lLZ-fh-CyH"/>
+                <constraint firstItem="POf-Or-Z0G" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="8" id="mba-77-Njp"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Dor-Gb-nkd" secondAttribute="trailing" constant="8" id="rFP-WP-dGy"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <variation key="default">
+                <mask key="constraints">
+                    <exclude reference="GJC-Z7-eb1"/>
+                </mask>
+            </variation>
+            <variation key="heightClass=regular-widthClass=regular">
+                <mask key="constraints">
+                    <exclude reference="EX7-ay-QJf"/>
+                    <include reference="GJC-Z7-eb1"/>
+                </mask>
+            </variation>
+        </view>
+    </objects>
+    <resources>
+        <image name="xCloseIcon" width="20" height="20"/>
+    </resources>
+</document>
