@@ -48,7 +48,7 @@ final class QuestionsViewModel {
                 self.questionObject?.answers.shuffle()
                 self.delegate?.didLoad()
 
-            case .error(let error): break
+            case .error(let error): 
                 self.delegate?.didError(viewError: ViewError(apiError: error))
             }
         }
@@ -59,6 +59,7 @@ final class QuestionsViewModel {
 
         let isCorrect = questionObject?.answers[selectedIndexPath.row].correct ?? false
         delegate?.didSubmitAnswer(isCorrect: isCorrect)
+        self.selectedIndexPath = nil
 
         if isCorrect {
             questionsAnsweredCorrectly += 1

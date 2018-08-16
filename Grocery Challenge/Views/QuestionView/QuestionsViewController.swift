@@ -163,7 +163,6 @@ extension QuestionsViewController: QuestionsViewModelDelegate {
         }
 
         submitButton.isEnabled = false
-        viewModel.selectedIndexPath = nil
         viewModel.load()
     }
 
