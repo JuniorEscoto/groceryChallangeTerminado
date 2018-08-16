@@ -53,6 +53,7 @@ final class QuestionsViewController: UIViewController {
 
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
         super.viewWillTransition(to: size, with: coordinator)
+        answerCells = []
         flowLayout.updateNumberOfColumns()
     }
 
@@ -122,7 +123,6 @@ extension QuestionsViewController: UICollectionViewDataSource, UICollectionViewD
         cell.download(url: viewModel.imageURL(for: indexPath))
         answerCells.append(cell)
         cell.cellIsSelected = viewModel.selectedIndexPath == indexPath
-
         cell.didTap = { [unowned self] in
             self.submitButton.isEnabled = true
             self.answerCells.forEach { $0.cellIsSelected = false }
@@ -139,7 +139,18 @@ extension QuestionsViewController: QuestionsViewModelDelegate {
         DispatchQueue.main.async { [unowned self] in
             self.activityIndicator.stopAnimating()
             self.activityIndicator.isHidden = true
-            self.questionLabel.text = self.viewModel.question
+
+            // FIXME: All strings presented to user should be localized
+            let attributedQuestion = NSMutableAttributedString()
+            attributedQuestion
+                .newLine()
+                .semiboldText("Select correct image", size: 22)
+                .newLine()
+                .newLine()
+                .text(self.viewModel.question, color: #colorLiteral(red: 0.02745098039, green: 0.7137254902, blue: 0.1411764706, alpha: 1))
+
+            self.questionLabel.attributedText = attributedQuestion
+
             UIView.transition(with: self.view,
                               duration: 0.2,
                               options: .transitionCrossDissolve,

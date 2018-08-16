@@ -69,7 +69,7 @@ final class AnswersCollectionFlowLayout: UICollectionViewFlowLayout {
 
     override func prepare() {
         guard let collectionView = collectionView else { return }
-        collectionView.contentInset = UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 20)
+        collectionView.contentInset = UIEdgeInsets(top: 30, left: 30, bottom: 30, right: 30)
         setFlowLayoutGrid(for: collectionView)
     }
 

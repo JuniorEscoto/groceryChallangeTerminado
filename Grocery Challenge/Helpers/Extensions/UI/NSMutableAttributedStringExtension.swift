@@ -10,9 +10,27 @@ import UIKit
 
 extension NSMutableAttributedString {
 
-    @discardableResult func text(_ text: String) -> NSMutableAttributedString {
-        let string = NSMutableAttributedString(string: text)
+    @discardableResult func text(_ text: String?,
+                                 size: CGFloat = 16,
+                                 color: UIColor = .black) -> NSMutableAttributedString {
+
+        let attributes = [NSAttributedStringKey.font: UIFont.systemFont(ofSize: size, weight: UIFont.Weight.regular),
+                          NSAttributedStringKey.foregroundColor: color]
+
+        let string = NSMutableAttributedString(string: text ?? "", attributes: attributes)
         self.append(string)
+        return self
+    }
+
+    @discardableResult func semiboldText(_ text: String?,
+                                         size: CGFloat = 16,
+                                         color: UIColor = .black) -> NSMutableAttributedString {
+
+        let attributes = [NSAttributedStringKey.font: UIFont.systemFont(ofSize: size, weight: UIFont.Weight.semibold),
+                          NSAttributedStringKey.foregroundColor: color]
+
+        let boldString = NSMutableAttributedString(string: text ?? "", attributes: attributes)
+        self.append(boldString)
         return self
     }
 

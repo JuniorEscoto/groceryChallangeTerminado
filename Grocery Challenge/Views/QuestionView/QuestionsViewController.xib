@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="ipad9_7" orientation="portrait">
+    <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -26,7 +26,7 @@
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
-            <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+            <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bro-jY-n95">
@@ -41,7 +41,7 @@
                     </connections>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="POf-Or-Z0G">
-                    <rect key="frame" x="8" y="65" width="752" height="40"/>
+                    <rect key="frame" x="8" y="127.66666666666669" width="398" height="40"/>
                     <constraints>
                         <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="wFD-gr-wpf"/>
                     </constraints>
@@ -50,7 +50,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dor-Gb-nkd" customClass="PrimaryButton" customModule="Grocery_Challenge" customModuleProvider="target">
-                    <rect key="frame" x="234" y="964" width="300" height="40"/>
+                    <rect key="frame" x="57" y="676" width="300" height="40"/>
                     <constraints>
                         <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="0nH-8D-7IW"/>
                         <constraint firstAttribute="width" constant="300" id="gcJ-IZ-gI4"/>
@@ -61,7 +61,7 @@
                     </connections>
                 </button>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="4td-ua-oHE">
-                    <rect key="frame" x="0.0" y="113" width="768" height="819"/>
+                    <rect key="frame" x="0.0" y="175.66666666666666" width="414" height="404.66666666666674"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="nrB-VD-ME8">
                         <size key="itemSize" width="50" height="50"/>
@@ -75,10 +75,10 @@
                     </connections>
                 </collectionView>
                 <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="7uy-Xl-jv7">
-                    <rect key="frame" x="374" y="512" width="20" height="20"/>
+                    <rect key="frame" x="197" y="368" width="20" height="20"/>
                 </activityIndicatorView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zaj-z0-9yw">
-                    <rect key="frame" x="0.0" y="0.0" width="768" height="75"/>
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="112.66666666666667"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="75" id="jxi-Uu-arb"/>
@@ -91,7 +91,7 @@
                 <constraint firstItem="Zaj-z0-9yw" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="4ka-3T-vTO"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="Dor-Gb-nkd" secondAttribute="bottom" constant="20" id="8zH-Mc-CP3"/>
                 <constraint firstItem="Bro-jY-n95" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="ELA-be-8MD"/>
-                <constraint firstItem="4td-ua-oHE" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.6" id="EX7-ay-QJf"/>
+                <constraint firstItem="4td-ua-oHE" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.55" id="EX7-ay-QJf"/>
                 <constraint firstItem="4td-ua-oHE" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.8" id="GJC-Z7-eb1"/>
                 <constraint firstItem="7uy-Xl-jv7" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="HeY-jE-pb3"/>
                 <constraint firstItem="Dor-Gb-nkd" firstAttribute="top" relation="greaterThanOrEqual" secondItem="4td-ua-oHE" secondAttribute="bottom" constant="8" id="KWw-Ym-DfT"/>
